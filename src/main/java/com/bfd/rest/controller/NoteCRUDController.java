@@ -3,9 +3,9 @@ package com.bfd.rest.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bfd.common.ExceptionUtil;
@@ -20,9 +20,9 @@ public class NoteCRUDController {
     @Autowired
     private NoteService noteService;
 
-    @RequestMapping(value = "/{noteId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/update", method = RequestMethod.PUT, produces = "application/json")
     @ResponseBody
-    public NoteResult editNote(@RequestParam Note note) {
+    public NoteResult editNote(@RequestBody Note note) {
         try {
             if (null != note) {
                 noteService.updateNote(note);
@@ -50,9 +50,9 @@ public class NoteCRUDController {
         }
     }
 
-    @RequestMapping(value = "/create")
+    @RequestMapping(value = "/create", method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
-    public NoteResult createNote(@RequestParam Note note) {
+    public NoteResult createNote(@RequestBody Note note) {
         try {
             if (null != note) {
                 noteService.createNote(note);
