@@ -19,12 +19,6 @@ public class NoteRESTContrller {
     @Autowired
     private NoteService noteService;
 
-    @RequestMapping("/abc")
-    public String controllerTest() {
-        System.out.println("abctest");
-        return "abctest";
-    }
-
     @RequestMapping("/note/{noteId}")
     @ResponseBody
     public NoteResult getNoteByNoteId(@PathVariable Long noteId) {
