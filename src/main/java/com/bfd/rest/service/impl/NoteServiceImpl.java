@@ -1,5 +1,6 @@
 package com.bfd.rest.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class NoteServiceImpl implements NoteService {
     }
 
     public void updateNote(Note note) {
+        note.setUpdated(new Date());
         noteDao.updateNote(note);
 
     }
@@ -37,8 +39,10 @@ public class NoteServiceImpl implements NoteService {
         noteDao.deteleNote(noteId);
 
     }
-    
-    public void createNote(Note note){
+
+    public void createNote(Note note) {
+        note.setCreated(new Date());
+        note.setUpdated(new Date());
         noteDao.createNote(note);
     }
 
