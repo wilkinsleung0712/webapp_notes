@@ -37,5 +37,9 @@ public class NoteServiceImpl implements NoteService {
         noteDao.deteleNote(noteId);
 
     }
+    
+    public void createNote(Note note){
+        noteDao.createNote(note);
+    }
 
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bfd.common.ExceptionUtil;
 import com.bfd.common.NoteResult;
 import com.bfd.pojo.Note;
 import com.bfd.rest.service.NoteService;
@@ -33,7 +34,7 @@ public class NoteRESTContrller {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            return NoteResult.build(500, "fail");
+            return NoteResult.build(500, ExceptionUtil.getStackTrace(e));
         }
     }
 
@@ -47,7 +48,7 @@ public class NoteRESTContrller {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            return NoteResult.build(500, "fail");
+            return NoteResult.build(500, ExceptionUtil.getStackTrace(e));
         }
     }
 
