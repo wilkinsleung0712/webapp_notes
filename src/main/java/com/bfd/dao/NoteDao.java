@@ -12,9 +12,9 @@ public interface NoteDao {
 
     Note getNoteById(long id);
 
-    void createNote(Note note);
+    Long createNote(Note note);
 
-    void updateNote(Note note);
+    Long updateNote(Note note);
 
     void deteleNote(long noteId);
 

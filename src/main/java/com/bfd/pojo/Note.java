@@ -1,6 +1,6 @@
 package com.bfd.pojo;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,8 +18,8 @@ public class Note {
     private long id;
     private String title;
     private String content;
-    private Timestamp created;
-    private Timestamp updated;
+    private Date created;
+    private Date updated;
 
     /**
      * 
@@ -77,7 +77,7 @@ public class Note {
     /**
      * @return the created
      */
-    public Timestamp getCreated() {
+    public Date getCreated() {
         return created;
     }
 
@@ -85,14 +85,14 @@ public class Note {
      * @param created
      *            the created to set
      */
-    public void setCreated(Timestamp created) {
+    public void setCreated(Date created) {
         this.created = created;
     }
 
     /**
      * @return the updated
      */
-    public Timestamp getUpdated() {
+    public Date getUpdated() {
         return updated;
     }
 
@@ -100,7 +100,7 @@ public class Note {
      * @param updated
      *            the updated to set
      */
-    public void setUpdated(Timestamp updated) {
+    public void setUpdated(Date updated) {
         this.updated = updated;
     }
 

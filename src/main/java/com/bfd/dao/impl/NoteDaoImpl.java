@@ -57,17 +57,19 @@ public class NoteDaoImpl implements NoteDao {
     /* (non-Javadoc)
      * @see com.bfd.dao.impl.NoteDao#createNote(com.bfd.pojo.Note)
      */
-    public void createNote(Note note) {
+    public Long createNote(Note note) {
         session().save(note);
         session().flush();
+        return note.getId();
     }
 
     /* (non-Javadoc)
      * @see com.bfd.dao.impl.NoteDao#updateNote(com.bfd.pojo.Note)
      */
-    public void updateNote(Note note) {
+    public Long updateNote(Note note) {
         session().saveOrUpdate(note);
         session().flush();
+        return note.getId();
     }
 
     /* (non-Javadoc)
