@@ -15,7 +15,7 @@ import com.bfd.pojo.Note;
 @Repository
 @Transactional
 public class NoteDaoImpl implements NoteDao {
-    
+
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -27,8 +27,10 @@ public class NoteDaoImpl implements NoteDao {
         // TODO Auto-generated constructor stub
     }
 
-    /* (non-Javadoc)
-     * @see com.bfd.dao.impl.NoteDao#getAllNote()   
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.bfd.dao.impl.NoteDao#getAllNote()
      */
     @SuppressWarnings("unchecked")
     public List<Note> getAllNote() {
@@ -37,15 +39,9 @@ public class NoteDaoImpl implements NoteDao {
         return list;
     }
 
-    /* (non-Javadoc)
-     * @see com.bfd.dao.impl.NoteDao#getNoteByUserId(long)
-     */
-    public List<Note> getNoteByUserId(long userid) {
-
-        return null;
-    }
-
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.bfd.dao.impl.NoteDao#getNoteById(long)
      */
     public Note getNoteById(long id) {
@@ -54,7 +50,9 @@ public class NoteDaoImpl implements NoteDao {
         return note;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.bfd.dao.impl.NoteDao#createNote(com.bfd.pojo.Note)
      */
     public Long createNote(Note note) {
@@ -63,16 +61,20 @@ public class NoteDaoImpl implements NoteDao {
         return note.getId();
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.bfd.dao.impl.NoteDao#updateNote(com.bfd.pojo.Note)
      */
     public Long updateNote(Note note) {
-        session().saveOrUpdate(note);
+        session().update(note);
         session().flush();
         return note.getId();
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.bfd.dao.impl.NoteDao#deteleNote(long)
      */
     public void deteleNote(long noteId) {

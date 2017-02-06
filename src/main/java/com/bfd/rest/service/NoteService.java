@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.bfd.pojo.Note;
 
+/**
+ * Service Layer for Note operation
+ * @Date 4:38:50 pm 6 Feb 2017
+ * @author wilkins.liang
+ *
+ */
 public interface NoteService {
 
     public List<Note> getAllList();

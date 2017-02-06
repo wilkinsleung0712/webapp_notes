@@ -5,17 +5,25 @@ import java.util.List;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Custom return object from backend to front end indicate if the request has
+ * been successful.
+ * 
+ * @Date 4:30:12 pm 6 Feb 2017
+ * @author wilkins.liang
+ *
+ */
 public class NoteResult {
-    // 定义jackson对象
+
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    // 响应业务状态
+    // http status
     private Integer status;
 
-    // 响应消息
+    // error message
     private String msg;
 
-    // 响应中的数据
+    // data if data return is required
     private Object data;
 
     public static NoteResult build(Integer status, String msg, Object data) {
@@ -50,9 +58,9 @@ public class NoteResult {
         this.data = data;
     }
 
-//    public Boolean isOK() {
-//        return this.status == 200;
-//    }
+    // public Boolean isOK() {
+    // return this.status == 200;
+    // }
 
     public Integer getStatus() {
         return status;
@@ -79,10 +87,12 @@ public class NoteResult {
     }
 
     /**
-     * 将json结果集转化为NoteResult对象
+     * å°†jsonç»“æžœé›†è½¬åŒ–ä¸ºNoteResultå¯¹è±¡
      * 
-     * @param jsonData json数据
-     * @param clazz NoteResult中的object类型
+     * @param jsonData
+     *            jsonæ•°æ�®
+     * @param clazz
+     *            NoteResultä¸­çš„objectç±»åž‹
      * @return
      */
     public static NoteResult formatToPojo(String jsonData, Class<?> clazz) {
@@ -107,7 +117,7 @@ public class NoteResult {
     }
 
     /**
-     * 没有object对象的转化
+     * Convert data string into NoteResult
      * 
      * @param json
      * @return
@@ -122,10 +132,10 @@ public class NoteResult {
     }
 
     /**
-     * Object是集合转化
+     * Convert data string into NoteResult which contain a list of clazz
      * 
-     * @param jsonData json数据
-     * @param clazz 集合中的类型
+     * @param jsonData
+     * @param clazz
      * @return
      */
     public static NoteResult formatToList(String jsonData, Class<?> clazz) {

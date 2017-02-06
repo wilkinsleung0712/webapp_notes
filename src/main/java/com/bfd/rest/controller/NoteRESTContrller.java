@@ -13,6 +13,13 @@ import com.bfd.common.NoteResult;
 import com.bfd.pojo.Note;
 import com.bfd.rest.service.NoteService;
 
+/**
+ * Controller for getting note by id or getting a full list of note
+ * 
+ * @Date 4:38:02 pm 6 Feb 2017
+ * @author wilkins.liang
+ *
+ */
 @RestController
 public class NoteRESTContrller {
 

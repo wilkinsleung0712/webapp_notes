@@ -13,6 +13,13 @@ import com.bfd.common.NoteResult;
 import com.bfd.pojo.Note;
 import com.bfd.rest.service.NoteService;
 
+/**
+ * Entry point for CRUD Note
+ * 
+ * @Date 4:37:31 pm 6 Feb 2017
+ * @author wilkins.liang
+ *
+ */
 @Controller
 @RequestMapping("/note")
 public class NoteCRUDController {

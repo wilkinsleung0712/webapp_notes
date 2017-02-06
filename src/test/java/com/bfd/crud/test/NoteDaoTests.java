@@ -3,19 +3,19 @@ package com.bfd.crud.test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
+import javax.transaction.Transactional;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.bfd.dao.NoteDao;
 import com.bfd.pojo.Note;
 
-@ContextConfiguration(locations = {
-        "classpath:spring/applicationContext-*.xml" })
+@ContextConfiguration(locations = { "classpath:spring/applicationContext-*.xml" })
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
 public class NoteDaoTests {
