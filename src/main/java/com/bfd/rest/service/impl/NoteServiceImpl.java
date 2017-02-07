@@ -52,7 +52,7 @@ public class NoteServiceImpl implements NoteService {
             }
 
             if (!StringUtils.isBlank(newnote.getTitle())) {
-                note.setContent(newnote.getTitle());
+                note.setTitle(newnote.getTitle());
             }
 
             note.setUpdated(new Date());
