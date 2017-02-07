@@ -27,7 +27,7 @@ public class NoteCRUDController {
     @Autowired
     private NoteService noteService;
 
-    @RequestMapping(value = "/update", method = RequestMethod.PUT, produces = "application/json")
+    @RequestMapping(value = "/{noteId}", method = RequestMethod.PUT)
     @ResponseBody
     public NoteResult editNote(@RequestBody Note note) {
         try {
