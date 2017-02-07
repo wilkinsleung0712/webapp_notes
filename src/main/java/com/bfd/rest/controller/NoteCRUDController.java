@@ -42,7 +42,7 @@ public class NoteCRUDController {
         }
     }
 
-    @RequestMapping(value = "/{noteId}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{noteId}", method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
     public NoteResult deleteNote(@PathVariable Long noteId) {
         try {
